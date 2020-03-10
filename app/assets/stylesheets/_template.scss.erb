@@ -1,0 +1,19 @@
+$background_color : <%= custom_style.background_color %>;
+$block_height : <%= custom_style.block_height %>;
+$name_color : <%= custom_style.name_color %>;
+$name_style : <%= custom_style.name_style %>;
+$name_size : <%= custom_style.name_size %>;
+$text_color : <%= custom_style.text_color %>;
+$text_style : <%= custom_style.text_style %>;
+$text_size : <%= custom_style.text_size %>;
+
+<% custom_style.logo.recreate_versions! if custom_style.logo.present? %>  
+$logo_url : '<%= custom_style.logo.normal.url %>';
+
+.logo-placeholder{
+  @if $logo_url !='' {
+    background-image: url($logo_url);
+  }
+}
+
+@import "application";

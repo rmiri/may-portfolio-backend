@@ -41,3 +41,10 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+#Gems that I added:
+#To upload images into ruby
+gem 'carrierwave', '~> 2.0'
+
+#to manipulate the image, carrierwave asks for it
+gem 'mini_magick', '~> 4.3', '>= 4.3.6'

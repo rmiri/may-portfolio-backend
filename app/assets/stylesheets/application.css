@@ -1,0 +1,35 @@
+@import "defaults";
+
+.container{
+  height: $block_height;
+  background-color: $background_color;
+}
+
+.logo-placeholder{
+  background-image: url($logo_url);
+  background-repeat:no-repeat;
+  background-color: white;
+  display: block;
+  float: left;
+  width: 320px;
+  height: 200px;
+  margin-right: 20px;
+}
+
+.user-name {
+  color: $name_color;
+  font-size: $name_size;
+  font-style: $name_style;
+}
+
+.text{
+  color: $text_color;
+  font-size: $text_size;
+  font-style: $text_style; 
+}
+
+
+body{
+  width: 960px;
+  margin:50px auto;
+}

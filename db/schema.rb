@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_110433) do
+ActiveRecord::Schema.define(version: 2020_03_11_153438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "about_mes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name"
+    t.string "profile_photo"
+    t.text "about_me"
+    t.string "phone"
+    t.string "email"
+    t.index ["user_id"], name: "index_about_mes_on_user_id"
+  end
+
+  create_table "pages", force: :cascade do |t|
+    t.string "website_name"
+    t.string "logo"
+    t.string "nav_link_1"
+    t.string "nav_link_2"
+    t.string "filter_1"
+    t.string "filter_2"
+    t.string "filter_3"
+    t.string "footer_link_1"
+    t.string "footer_link_2"
+    t.string "footer_link_3"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_pages_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -22,4 +47,6 @@ ActiveRecord::Schema.define(version: 2020_03_11_110433) do
     t.string "name"
   end
 
+  add_foreign_key "about_mes", "users"
+  add_foreign_key "pages", "users"
 end

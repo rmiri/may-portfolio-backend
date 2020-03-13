@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_11_153438) do
+ActiveRecord::Schema.define(version: 2020_03_12_134039) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,15 @@ ActiveRecord::Schema.define(version: 2020_03_11_153438) do
     t.index ["user_id"], name: "index_pages_on_user_id"
   end
 
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "index_description"
+    t.text "description"
+    t.string "category"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_projects_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -49,4 +58,5 @@ ActiveRecord::Schema.define(version: 2020_03_11_153438) do
 
   add_foreign_key "about_mes", "users"
   add_foreign_key "pages", "users"
+  add_foreign_key "projects", "users"
 end

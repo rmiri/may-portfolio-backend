@@ -4,16 +4,29 @@ class ProjectsController < ApplicationController
         render json: Project.all
     end
     def show
-        render json: Project.find(params[:id])
+        @project = Project.find(params[:id])
+        render json: {project: @project, pictures: @project.pictures}
     end
     def create
-  
-        @project = Project.new(title: params[:title], index_description: params[:index_description], description: params[:description], category: params[:category], user_id: params[:user_id]  )
-    
+        @project = Project.create(project_params)
+        byebug
+        # @project.pictures.attach(params[:pictures])
+       
+        # if @project.pictures.attached?
+        #     @project.update(image_url: url_for(@project.pictures))
+        # end
+
         if @project.save
-            render json: {message: "all good msiter"}
+            render json: {project: @project, pictures: url_for(@project.pictures)}
         else
             render json: {error: "something went wrong, try again later"}
         end
     end
+
+    private
+
+    def project_params
+        params.permit(:title, :index_description, :description, :category, :user_id, pictures: [])
+    end
+
 end

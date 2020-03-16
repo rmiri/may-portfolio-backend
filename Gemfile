@@ -48,3 +48,5 @@ gem 'carrierwave', '~> 2.0'
 
 #to manipulate the image, carrierwave asks for it
 gem 'mini_magick', '~> 4.3', '>= 4.3.6'
+
+gem "google-cloud-storage", "~> 1.8", require: false

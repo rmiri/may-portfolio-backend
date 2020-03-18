@@ -9,18 +9,18 @@ class ProjectsController < ApplicationController
     end
     def create
         @project = Project.create(project_params)
-        # byebug
-        # @project.pictures.attach(params[:pictures])
-       
-        # if @project.pictures.attached?
-        #     @project.update(image_url: url_for(@project.pictures))
-        # end
 
         if @project
             render json: {project: @project, pictures: url_for(@project.pictures)}
         else
-            render json: {error: "something went wrong, try again later"}
+            render json: {message: "something went wrong, try again later"}
         end
+    end
+
+    def destroy
+        @project = Project.find(params[:id])
+        @project.destroy
+        render json: {message: "Project deleted"}
     end
 
     private

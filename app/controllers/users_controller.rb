@@ -15,7 +15,7 @@ class UsersController < ApplicationController
             @token = encode_token(user_id: @user.id)
             render json: { user: @user, jwt: @token }, status: :created
         else
-            render json: { error: 'Failed to create user'}, status: :not_acceptable
+            render json: { message: 'Failed to create user'}, status: :not_acceptable
         end
     end
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         if current_user
             render json: {user: current_user, token: encode_token(id: current_user.id) }
         else
-          render json: { error: "You are not authorized" }
+          render json: { message: "You are not authorized" }
         end
     end
 

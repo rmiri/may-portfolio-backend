@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password
-    has_many :pages
+    has_one :page
+    has_one :about_me
     has_many :projects
     has_one_attached :picture
 

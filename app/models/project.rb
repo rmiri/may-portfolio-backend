@@ -1,4 +1,4 @@
 class Project < ApplicationRecord
     belongs_to :user
-    has_one_attached :pictures
+    has_many_attached :pictures
 end

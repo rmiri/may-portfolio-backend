@@ -4,14 +4,17 @@ class ProjectsController < ApplicationController
         render json: Project.all
     end
     def show
-        @project = Project.find(params[:id])
-        render json: {project: @project, pictures: url_for(@project.pictures)}
+        project = Project.find(params[:id])
+        projPictures = []
+        project.pictures.map{ |pic| projPictures.push(url_for(pic))}
+        # byebug
+        render json: {project: project, pictures: projPictures}
     end
     def create
         @project = Project.create(project_params)
 
         if @project
-            render json: {project: @project, pictures: url_for(@project.pictures)}
+            render json: {message: "Project created"}
         else
             render json: {message: "something went wrong, try again later"}
         end
@@ -26,7 +29,7 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.permit(:title, :index_description, :description, :category, :user_id, :pictures)
+        params.permit(:title, :index_description, :description, :category, :user_id, pictures: [])
     end
 
 end

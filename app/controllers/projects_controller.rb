@@ -1,14 +1,13 @@
 class ProjectsController < ApplicationController
     skip_before_action :authorized
     def index
-        @projects = Project.all
-        render json: Project.all
+        @projectsWithPics = Project.all.map{ |proj| {project: proj, pictures: url_for(proj.pictures)} }
+        render json: @projectsWithPics
     end
     def show
         @project = Project.find(params[:id])
-        # projPictures = []
-        # project.pictures.map{ |pic| projPictures.push(url_for(pic))}
-        # byebug
+
+      
         render json: {project: @project, pictures: url_for(@project.pictures)}
     end
     def create

@@ -7,7 +7,6 @@ class PagesController < ApplicationController
         render json: page
     end
     def update
-        # byebug
         page = Page.find_by(id: params[:id])
         page.update(page_params)
        

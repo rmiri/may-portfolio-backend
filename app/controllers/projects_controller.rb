@@ -1,14 +1,15 @@
 class ProjectsController < ApplicationController
     skip_before_action :authorized
     def index
+        @projects = Project.all
         render json: Project.all
     end
     def show
-        project = Project.find(params[:id])
-        projPictures = []
-        project.pictures.map{ |pic| projPictures.push(url_for(pic))}
+        @project = Project.find(params[:id])
+        # projPictures = []
+        # project.pictures.map{ |pic| projPictures.push(url_for(pic))}
         # byebug
-        render json: {project: project, pictures: projPictures}
+        render json: {project: @project, pictures: url_for(@project.pictures)}
     end
     def create
         @project = Project.create(project_params)
@@ -29,7 +30,7 @@ class ProjectsController < ApplicationController
     private
 
     def project_params
-        params.permit(:title, :index_description, :description, :category, :user_id, pictures: [])
+        params.permit(:title, :index_description, :description, :category, :user_id, :pictures)
     end
 
 end

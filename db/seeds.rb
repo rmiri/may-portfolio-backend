@@ -22,14 +22,14 @@ User.create(
 Page.create(
     website_name: "May Miriuk",
     logo:"https://static.wixstatic.com/media/aafbd6_5d8f75934bf34a46a0fec97368c74b18~mv2.png/v1/fill/w_66,h_54,al_c,q_85,usm_0.66_1.00_0.01/Prancheta%20160px.webp",
-    nav_link_1: "About Me",
+    nav_link_1: "May Miriuk",
     nav_link_2: "Projects",
-    filter_1: "Graphic",
-    filter_2: "UI",
-    filter_3: "Logo",
-    footer_link_1: "#",
-    footer_link_2: "#",
-    footer_link_3: "#",
+    filter_1: "Editorial",
+    filter_2: "Website",
+    filter_3: "Identity",
+    footer_link_1: "maymiriuk@gmail.com",
+    footer_link_2: "https://www.linkedin.com/in/mayaramiriuk/",
+    footer_link_3: "https://dribbble.com/MayMiriuk",
     user_id: User.all.first.id
 )
 
@@ -52,5 +52,14 @@ Project.create(
     index_description: "UI done for company",
     description: "UI I did for company X with elemes X Y",
     description: "UI",
+    user_id: User.all.first.id
+)
+
+may = AboutMe.create(
+    name: "Mayara Miriuk",
+    profile_photo: "https://res.cloudinary.com/mirir/image/upload/v1585144709/IMG_20190818_152736_h3kdqq.png",
+    about_me: "l’m May Miriuk - a UI and graphic designer based in London with experience in branding, editorial, print and digital. I worked for 6 years with Estúdio Claraboia, a small but rising design studio in São Paulo, Brazil, where I had the opportunity to experience a great variety of briefings and clients.Adobe XD, lnDesign, lllustrator, Photoshop, Acrobat MacOS & Windows, Wacom pen tablet Languages: Portuguese (Native), English (Fluent)",
+    phone: "0770770770",
+    email: "maymiriuk@gmail.com",
     user_id: User.all.first.id
 )

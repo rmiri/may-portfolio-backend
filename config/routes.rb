@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'auth/create'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
   resources :users, only: [:create]
   resources :projects
   resources :pages
@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   get '/validate', to: 'users#validate'
 
   get '/aboutme', to: 'about_mes#index'
+  # patch '/about_mes/:id', to: 'about_mes#update'
 end

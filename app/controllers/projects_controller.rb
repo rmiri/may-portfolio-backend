@@ -1,18 +1,20 @@
 class ProjectsController < ApplicationController
     skip_before_action :authorized
     def index
-        @projectsWithPics = Project.all.map{ |proj| {project: proj, pictures: url_for(proj.pictures)} }
+        @projectsWithPics = Project.all.map{ |proj| {
+            project: proj, pictures: url_for(proj.pictures)} }
         render json: @projectsWithPics
     end
     def show
         @project = Project.find(params[:id])
-
-      
-        render json: {project: @project, pictures: url_for(@project.pictures)}
+        if @project.pictures
+            render json: {project: @project, pictures: url_for(@project.pictures)}
+        else
+            render json: {project: @project, pictures: "#"}
+        end
     end
     def create
         @project = Project.create(project_params)
-
         if @project
             render json: {message: "Project created"}
         else

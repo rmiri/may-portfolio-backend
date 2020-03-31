@@ -25,7 +25,7 @@ Start the server to be able to make a fetch from the frontend.
 rails s
 ```
 The frontend has the URL set to localhost:3000, so if you don’t want to change it’s a good idea to start the server from the backend first.
-Alternatively, you can edit the URL on the [API.js file](https://github.com/rmiri/may-portfolio-frontend/blob/dev-2/src/API.js).
+Alternatively, you can edit the URL on the [API.js file](https://github.com/rmiri/may-portfolio-frontend/blob/dev-2/src/API.js).\
 ./src/API.js
 
 

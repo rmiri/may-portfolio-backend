@@ -7,7 +7,7 @@ The Interface Design was done by [May Miriuk](https://www.maymiriuk.com/).
 
 I used Ruby on Rails for the backend and React.Js and redux for the frontend.
 
-Ruby Version
+* Ruby Version
 ruby 2.6.1p33
 
 ## Instalation 

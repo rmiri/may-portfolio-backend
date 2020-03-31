@@ -1,11 +1,21 @@
 # README
 
-This is the backend for my final project for the Software Engineering BootCamp at FlatIron
-[Live Demo](https://vimeo.com/402325147)
+This is the backend for my final project for the Software Engineering BootCamp at FlatIron London.
+The project is a portfolio website for image-based professionals (designers, photographers…), you can see a live demo [here](https://vimeo.com/402325147).
 
-Things you may want to cover:
+The Interface Design was done by [May Miriuk](https://www.maymiriuk.com/).
 
-* Ruby version
+I used Ruby on Rails for the backend and React.Js and redux for the frontend.
+
+Ruby Version
+ruby 2.6.1p33
+
+## Instalation 
+
+```bash
+bundle install
+```
+
 
 * System dependencies
 

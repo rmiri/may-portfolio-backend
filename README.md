@@ -1,7 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend for my final project for the Software Engineering BootCamp at FlatIron
+[Live Demo](https://vimeo.com/402325147)
 
 Things you may want to cover:
 

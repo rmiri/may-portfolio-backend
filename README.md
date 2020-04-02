@@ -16,6 +16,15 @@ ruby 2.6.1p33
 ```bash
 bundle install
 ```
+```bash
+rails db:create
+```
+```bash
+rails db:seed
+```
+```bash
+rails db:migrate
+```
 
 ## Usage
 
@@ -24,6 +33,12 @@ Start the server to be able to make a fetch from the frontend.
 ```bash
 rails s
 ```
+or if it doesn't work use this insteade:
+
+```bash
+puma
+```
+
 The frontend has the URL set to localhost:3000, so if you don’t want to change it’s a good idea to start the server from the backend first.
 Alternatively, you can edit the URL on the [API.js file](https://github.com/rmiri/may-portfolio-frontend/blob/dev-2/src/API.js).\
 ./src/API.js

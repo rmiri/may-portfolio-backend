@@ -13,7 +13,7 @@ User.delete_all
 
 User.create(
     email: "email@fakeemail.com",
-    password: "123",
+    password: "safepassword",
     admin?: true,
     name: "Renata",
     
@@ -33,27 +33,6 @@ Page.create(
     user_id: User.all.first.id
 )
 
-Project.create(
-    title: "Logo C.O.",
-    index_description: "logo done for company",
-    description: "logo I did for company X with elemes X Y",
-    description: "Logo",
-    user_id: User.all.first.id
-)
-Project.create(
-    title: "Graphic C.O.",
-    index_description: "Graphic done for company",
-    description: "Graphic I did for company X with elemes X Y",
-    description: "Graphic",
-    user_id: User.all.first.id
-)
-Project.create(
-    title: "UI C.O.",
-    index_description: "UI done for company",
-    description: "UI I did for company X with elemes X Y",
-    description: "UI",
-    user_id: User.all.first.id
-)
 
 may = AboutMe.create(
     name: "Mayara Miriuk",

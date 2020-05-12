@@ -79,7 +79,8 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: may_portfolio_production
-  username: may_portfolio
-  password: <%= ENV['MAY_PORTFOLIO_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
+  # <<: *default
+  # database: may_portfolio_production
+  # username: may_portfolio
+  # password: <%= ENV['MAY_PORTFOLIO_DATABASE_PASSWORD'] %>
